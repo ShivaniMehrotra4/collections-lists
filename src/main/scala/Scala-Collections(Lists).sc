@@ -72,7 +72,21 @@ def firstEven(givenInputList: List[Int]): Int = {
 
 firstEven(List(21, 5, 29, 7, 6))
 
+def compress(givenList: List[Int]): List[Int] = {
+  @scala.annotation.tailrec
+  def compressRecursive(givenList: List[Int], newList: List[Int]): List[Int] = givenList match {
+    case List() => givenList
+    case first :: Nil => newList :+ first
+    case first :: second :: rest => if (first == second) compressRecursive(second :: rest, newList) else compressRecursive(second :: rest, newList :+ first)
+  }
+
+  compressRecursive(givenList, List.empty[Int])
+}
+compress(List(1, 1, 2, 2, 4, 5, 5))
+
+
 //Q. Add duplicate elements to list
+
 def duplicate(givenList: List[Int]): List[Int] = {
   givenList match {
     case Nil => givenList
