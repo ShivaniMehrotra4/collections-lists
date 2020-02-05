@@ -133,10 +133,10 @@ def drop(n: Int, givenList: List[Int]): List[Int] = {
       case head :: Nil => List(head)
       case head :: rest =>
         if (newList.length != n - 1) {
-          dropRecursive(head :: newList, rest)
+          dropRecursive(newList ::: List(head), rest)
         }
         else
-          newList.reverse ::: rest
+          newList ::: rest
     }
 
   }
