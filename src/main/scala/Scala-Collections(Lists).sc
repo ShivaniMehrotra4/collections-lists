@@ -72,6 +72,8 @@ def firstEven(givenInputList: List[Int]): Int = {
 
 firstEven(List(21, 5, 29, 7, 6))
 
+//remove duplicates
+
 def compress(givenList: List[Int]): List[Int] = {
   @scala.annotation.tailrec
   def compressRecursive(givenList: List[Int], newList: List[Int]): List[Int] = givenList match {
