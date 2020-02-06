@@ -21,6 +21,20 @@ val str = "anu"
 val result = sumConditional(map,str)
 
 // Q2.
+
+val map2 = Map(1 -> List("Sunil","Laxmi"),2 -> List("Bhavya", "Sangeeta"),3 ->List("Arun","Sushmita"),4 -> List("Jamwant") )
+val emptyMap = Map.empty[Int,List[String]]
+map2.foldLeft(emptyMap){ (emptyMap,element:(Int,List[String])) =>
+  if(element._1  % 2==0)
+    emptyMap ++ Map(element._1 -> element._2.map(x => x(0)+"even"))
+  else
+    emptyMap ++ Map(element._1 -> element._2.map(x => x(0)+"odd"))
+
+
+}
+emptyMap
+
+
 def check(map1 : Map[Int,List[String]]): Map[Int,List[String]] =
 {
   @scala.annotation.tailrec
@@ -62,4 +76,3 @@ val l = List(1,2,5,7,2,8)
 last(l)
 
 
-def checkMap(map:Map[String,Int])
