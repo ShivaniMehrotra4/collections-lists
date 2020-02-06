@@ -56,7 +56,10 @@ check(map1)
 
 def last(list: List[Int]):Int
 = {
-  list.foldLeft(0) { (acc,element) => if(element == Nil) acc else element }
+  list.foldLeft(0) { (acc,element) => element }
 }
 val l = List(1,2,5,7,2,8)
 last(l)
+
+
+def checkMap(map:Map[String,Int])
